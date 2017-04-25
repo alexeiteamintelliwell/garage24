@@ -51,6 +51,8 @@ namespace garage24.Controllers
         {
             if (ModelState.IsValid)
             {
+                vehicle.CheckInTime = DateTime.Now;
+                vehicle.CheckOutTime = DateTime.Now;
                 db.Vehicles.Add(vehicle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
